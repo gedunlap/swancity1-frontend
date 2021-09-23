@@ -48,7 +48,7 @@ nav {
   }
 }
 
-.main {
+.productlist {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -63,7 +63,7 @@ nav {
 
   img {
     max-height: 400px;
-    width: auto;
+    max-width: auto;
   }
 }
 
@@ -85,7 +85,7 @@ nav {
     margin: 15px 0;
 
     img {
-      max-height: 280px;
+      max-width: 350px;
     }
   }
 }

@@ -5,6 +5,7 @@ import Home from '../pages/Home'
 import About from '../pages/About'
 import Index from '../pages/Index'
 import Show from '../pages/Show'
+import CreateForm from '../pages/CreateForm'
 
 export default function Main(props) {
     const [products, setProducts] = useState(null)
@@ -48,6 +49,9 @@ export default function Main(props) {
                         <Show {...rp} />
                     )}
                 />
+                <Route path='/createform'>
+                    <CreateForm products={products} createProducts={createProducts} />
+                </Route>
             </Switch>
         </main>
     )
