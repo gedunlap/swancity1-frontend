@@ -7,17 +7,17 @@ import Index from '../pages/Index'
 import Show from '../pages/Show'
 
 export default function Main(props) {
-    const [product, setProduct] = useState(null)
+    const [products, setProducts] = useState(null)
 
     const URL = 'https://swancity-backend-1.herokuapp.com/product/'
 
-    const getProduct = async () => {
+    const getProducts = async () => {
         const response = await fetch(URL)
         const data = await response.json()
-        setProduct(data)
+        setProducts(data)
     }
 
-    const createProduct = async (product) => {
+    const createProducts = async (product) => {
         await fetch(URL, {
             method: 'post',
             headers: {
@@ -25,10 +25,10 @@ export default function Main(props) {
             },
             body: JSON.stringify(product),
         })
-        getProduct()
+        getProducts()
     }
 
-    useEffect(() => getProduct(), [])
+    useEffect(() => getProducts(), [])
 
     return (
         <main className="main">
@@ -40,7 +40,7 @@ export default function Main(props) {
                     <About />
                 </Route>
                 <Route path="/product">
-                    <Index product={product} createProduct={createProduct} />
+                    <Index products={products} createProducts={createProducts} />
                 </Route>
                 <Route 
                     path="/product/:id"
