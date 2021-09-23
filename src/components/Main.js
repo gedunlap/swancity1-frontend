@@ -40,7 +40,7 @@ export default function Main(props) {
                     <About />
                 </Route>
                 <Route path="/product">
-                    <Index />
+                    <Index product={product} createProduct={createProduct} />
                 </Route>
                 <Route 
                     path="/product/:id"
