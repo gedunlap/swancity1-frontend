@@ -7,6 +7,29 @@ import Index from '../pages/Index'
 import Show from '../pages/Show'
 
 export default function Main(props) {
+    const [product, setProduct] = useState(null)
+
+    const URL = 'https://swancity-backend-1.herokuapp.com/product/'
+
+    const getProduct = async () => {
+        const response = await fetch(URL)
+        const data = await response.json()
+        setProduct(data)
+    }
+
+    const createProduct = async (product) => {
+        await fetch(URL, {
+            method: 'post',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(product),
+        })
+        getProduct()
+    }
+
+    useEffect(() => getProduct(), [])
+
     return (
         <main className="main">
             <Switch>
