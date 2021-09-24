@@ -7,14 +7,16 @@ export default function Index(props) {
         return (
             <div className='index'>
                 <Link to='/createform'>
-                    Add New Item
+                    <button>Add New Item</button>
                 </Link>
                 <div className="productlist">
                     {props.products.map((product) => (
                         <div key={product.id} className="product">
-                            <Link to={`/products/${product._id}`} style={{textDecoration:'none'}}><h1>{product.name}</h1></Link>
-                            <img src={product.image} alt={product.name} />
-                            <h3>{product.manufacturer}</h3>
+                            <Link to={`/products/${product._id}`} style={{textDecoration:'none'}}>
+                                <h1>{product.name}</h1>
+                                <img src={product.image} alt={product.name} />
+                                <h3>{product.manufacturer}</h3>
+                            </Link>
                         </div>
                     ))}
                 </div>
