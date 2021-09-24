@@ -31,7 +31,9 @@ export default function CreateForm(props) {
     return (
         <div className="createpage">
             <form onSubmit={handleSubmit} className="createform">
-                <input 
+                <h2>Product Form</h2>
+                <input
+                    className="formitem"
                     type="text"
                     value={newForm.name}
                     name="name"
@@ -40,6 +42,7 @@ export default function CreateForm(props) {
                     onChange={handleChange}
                 />
                 <input 
+                    className="formitem"
                     type="text"
                     value={newForm.manufacturer}
                     name="manufacturer"
@@ -48,6 +51,7 @@ export default function CreateForm(props) {
                     onChange={handleChange}
                 />
                 <input 
+                    className="formitem"
                     type="text"
                     value={newForm.desc}
                     name="desc"
@@ -55,14 +59,15 @@ export default function CreateForm(props) {
                     required
                     onChange={handleChange}
                 />
-                <select name="category" id="category" required>
-                    <option value="null">Pick One</option>
+                <select name="category" id="category" className="formitem" required>
+                    <option value="null">Type</option>
                     <option value="table">Tables</option>
                     <option value="chair">Chairs</option>
                     <option value="couch">Couches</option>
                     <option value="cabinet">Cabinets</option>
                 </select>
                 <input 
+                    className="formitem"
                     type="string"
                     value={newForm.price}
                     name="price"
@@ -71,6 +76,7 @@ export default function CreateForm(props) {
                     onChange={handleChange}
                 />
                 <input 
+                    className="formitem"
                     type="text"
                     value={newForm.image}
                     name="image"
@@ -78,7 +84,7 @@ export default function CreateForm(props) {
                     required
                     onChange={handleChange}
                 />
-                <input type="submit" value="SUBMIT" />
+                <input type="submit" value="SUBMIT" className="formitem" id="button" />
             </form>
         </div>
     )

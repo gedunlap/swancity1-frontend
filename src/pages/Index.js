@@ -11,7 +11,7 @@ export default function Index(props) {
                 </Link>
                 <div className="productlist">
                     {props.products.map((product) => (
-                        <div key={product.id} className="product">
+                        <div key={product._id} className="product">
                             <Link to={`/products/${product._id}`} style={{textDecoration:'none'}}>
                                 <h1>{product.name}</h1>
                                 <img src={product.image} alt={product.name} />
