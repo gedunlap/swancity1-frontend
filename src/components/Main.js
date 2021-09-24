@@ -10,17 +10,17 @@ import CreateForm from '../pages/CreateForm'
 export default function Main(props) {
     const [products, setProducts] = useState(null)
 
-    const URL = 'https://swancity-backend-1.herokuapp.com/product/'
+    const URL = 'http://swancity-backend-1.herokuapp.com/'
 
     const getProducts = async () => {
-        const response = await fetch(URL)
+        const response = await fetch(URL + 'product/')
         const data = await response.json()
         setProducts(data)
     }
 
     const createProducts = async (product) => {
-        await fetch(URL, {
-            method: 'post',
+        await fetch(URL + 'createform/', {
+            method: 'POST',
             headers: {
                 "Content-Type": "application/json"
             },

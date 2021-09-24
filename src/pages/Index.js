@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Index(props) {
@@ -7,6 +6,9 @@ export default function Index(props) {
     const loaded = () => {
         return (
             <div className='index'>
+                <Link to='/createform'>
+                    Add New Item
+                </Link>
                 <div className="productlist">
                     {props.products.map((product) => (
                         <div key={product.id} className="product">
@@ -16,9 +18,6 @@ export default function Index(props) {
                         </div>
                     ))}
                 </div>
-                <Link to='/createform'>
-                    Add New Item
-                </Link>
             </div>
         )
     }
