@@ -72,6 +72,7 @@ nav {
 
     .product {
       margin: 30px 0;
+      width: 400px;
       
       a {
         color: rgb(0, 0, 0, 0.5);
@@ -79,7 +80,11 @@ nav {
     
       img {
         max-height: 400px;
-        max-width: auto;
+        max-width: 400px;
+      }
+
+      h1 {
+        font-size: 15px;
       }
     }
     
@@ -140,9 +145,9 @@ nav {
 
   .product {
     margin: 15px 0;
-
+    
     img {
       max-width: 350px;
-    }
+    };
   }
 }
