@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Home from '../pages/Home'
 import About from '../pages/About'
-import Index from '../pages/Index'
+import Products from '../pages/Products'
 import Show from '../pages/Show'
 import CreateForm from '../pages/CreateForm'
 
@@ -41,10 +41,10 @@ export default function Main(props) {
                     <About />
                 </Route>
                 <Route path="/product">
-                    <Index products={products} createProducts={createProducts} />
+                    <Products products={products} createProducts={createProducts} />
                 </Route>
                 <Route 
-                    path="/product/:id"
+                    path="/products/:id"
                     render={(rp) => (
                         <Show {...rp} />
                     )}
